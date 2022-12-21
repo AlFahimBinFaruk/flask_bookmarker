@@ -1,0 +1,4 @@
+export SECRET_KEY = 
+export JWT_SECRET_KEY = 
+# export SQLALCHEMY_DATABASE_URI = sqlite:///test.db
+export SQLALCHEMY_DATABASE_URI = postgresql://postgres:password@localhost/testdb

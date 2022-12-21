@@ -23,7 +23,7 @@ def create_app(test_config=None):
     # initialize db
     db.app = app
     db.init_app(app)
-    create_db(app)
+    # create_db(app)
 
     # initialize jwt manager
     JWTManager(app)
@@ -59,8 +59,14 @@ def create_app(test_config=None):
     return app    
 
 # function to create a new sqlite db if already one not exits.
+# def create_db(app):
+#     if not os.path.exists("instance/test.db"):
+#         app.app_context().push()
+#         db.create_all()
+#         print("New DB Created.")   
+
+# if db is list mysql/postgresql 
 def create_db(app):
-    if not os.path.exists("instance/test.db"):
-        app.app_context().push()
-        db.create_all()
-        print("New DB Created.")    
+    app.app_context().push()
+    db.create_all()
+    print("New DB Created.")    
